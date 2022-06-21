@@ -24,7 +24,7 @@ describe("Server", () => {
   });
 
   it("should return a 404 error page", async () => {
-    const response = await request.get("/nao-exist");
+    const response = await request.get("/not-exist-" + Date.now());
 
     expect(response.statusCode).toBe(404);
     expect(response.text).toContain("Página não existe!");
